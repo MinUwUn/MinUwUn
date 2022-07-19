@@ -1,4 +1,56 @@
-local mobs = {} 
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "Key System", HidePremium = false, SaveConfig = true, IntroText = "KeySystem"})
+
+OrionLib:MakeNotification({
+	Name = "Logged in!",
+	Content = "You're logged in as" ..Player.Name.." ",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+_G.Key = "Beeely"
+_G.KeyInput = "string"
+
+function CorrectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Correct Key!",
+        Content = "You Sucessfully Entered The Right Key",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+function IncorrectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Incorrect Key!",
+        Content = "You Entered The Wrong Key Mate, Try Again",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+local Tab = Window:MakeTab({
+	Name = "Key",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Enter Key",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+        _G.KeyInput = Value
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Check Key",
+	Callback = function()
+      		if _G.KeyInput == _G.Key then
+            CorrectKeyNotification()
+            local mobs = {} 
 getgenv().mob = nil 
 
 -- MOBS
@@ -204,3 +256,14 @@ TeleportationSection:NewButton("Nineth Quest", "Sea King [Level 100]", function(
     print("Clicked")
     game.Players.LocalPlayer.Character:MoveTo(Vector3.new(567.708923, 7.10109901, 739.924683, -0.913967013, 2.35637625e-08, -0.405788422, 2.96214093e-08, 1, -8.64792682e-09, 0.405788422, -1.99239452e-08, -0.913967013))
 end)
+            else
+                IncorrectKeyNotification()
+            end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Ask Min For The Key",
+	Callback = function()
+    end
+})
