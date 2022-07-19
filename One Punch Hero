@@ -1,1 +1,68 @@
-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
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "Key System", HidePremium = false, SaveConfig = true, IntroText = "KeySystem"})
+
+OrionLib:MakeNotification({
+	Name = "Logged in!",
+	Content = "You're logged in as"..Player.Name.." ",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+_G.Key = "Beeely"
+_G.KeyInput = "string"
+
+function MakeScriptHub()
+    loadstring(game:HttpGet(('https://https://raw.githubusercontent.com/MinUwUn/MinUwUn/main/OnePunchHero.lua')))()
+end
+
+function CorrectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Correct Key!",
+        Content = "You Sucessfully Entered The Right Key",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+function IncorrectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Incorrect Key!",
+        Content = "You Entered The Wrong Key Mate, Try Again",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+local Tab = Window:MakeTab({
+	Name = "Key",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Enter Key",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+        _G.KeyInput = Value
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Check Key",
+	Callback = function()
+      		if _G.KeyInput == _G.Key then
+            MakeScriptHub()
+            CorrectKeyNotification()
+            else
+                IncorrectKeyNotification()
+            end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Ask Min For The Key",
+	Callback = function()
+    end
+})
